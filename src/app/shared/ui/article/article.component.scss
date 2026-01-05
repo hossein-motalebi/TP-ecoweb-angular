@@ -1,7 +1,26 @@
+@keyframes pulseWidth {
+  0% { width: 100%; padding-left: 0; }
+  50% { width: 102%; padding-left: 10px; }
+  100% { width: 100%; padding-left: 0; }
+}
+
+@keyframes colorShift {
+  0% { background-color: #fff; border-color: rgba(0, 0, 0, 0.1); }
+  50% { background-color: #f9f9f9; border-color: rgba(0, 0, 0, 0.2); }
+  100% { background-color: #fff; border-color: rgba(0, 0, 0, 0.1); }
+}
+
+@keyframes shadowPulse {
+  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
 .article-preview {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.5rem 0;
   position: relative;
+  animation: pulseWidth 3s infinite, colorShift 4s infinite, shadowPulse 2s infinite;
 }
 
 div[class="article-preview"] > div[class="decorative-bar"] {
