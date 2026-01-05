@@ -1,12 +1,22 @@
 .tag-default {
   font-size: 0.8rem;
-  padding: 0.1rem 0.6em;
+  padding-top: 0.1rem;
+  padding-right: 0.6em;
+  padding-bottom: 0.1rem;
+  padding-left: 0.6em;
   white-space: nowrap;
+  margin-top: 0;
   margin-right: 3px;
   margin-bottom: 0.2rem;
+  margin-left: 0;
   display: inline-block;
-  border-radius: 10rem;
-  text-decoration: none;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
   cursor: pointer;
 }
 
