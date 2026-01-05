@@ -1,6 +1,5 @@
 <div class="login">
   <h1>Sign in</h1>
-  <a routerLink="/register" class="register">Need an account?</a>
 
   <form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
     <app-form-errors [errorResponse]="errorResponse"></app-form-errors>

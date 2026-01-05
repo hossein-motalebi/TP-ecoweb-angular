@@ -53,7 +53,7 @@ export class AuthStore
           errorResponse: null,
         });
       }
-      this.#router.navigate(['/']);
+      this.#router.navigate(['/settings']);
     },
     error: (err: HttpErrorResponse) => {
       this.patchState({

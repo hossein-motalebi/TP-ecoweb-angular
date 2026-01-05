@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -6,22 +7,22 @@ import {
   signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { provideComponentStore } from '@ngrx/component-store';
 import { map } from 'rxjs';
 import { Article } from 'src/app/shared/models';
 import { ArticleListComponent } from 'src/app/shared/ui/article-list';
 import { PaginationComponent } from 'src/app/shared/ui/pagination';
-import { injectArticleType } from './profile-article-list.di';
+import { ARTICLE_TYPE, injectArticleType } from './profile-article-list.di';
 import { ProfileArticleListStore } from './profile-article-list.store';
 
 @Component({
-    selector: 'app-profile-article-list',
-    imports: [PaginationComponent, ArticleListComponent],
-    templateUrl: './profile-article-list.component.html',
-    styleUrls: ['./profile-article-list.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [provideComponentStore(ProfileArticleListStore)]
+  selector: 'app-profile-article-list',
+  imports: [PaginationComponent, ArticleListComponent, RouterLink, NgIf],
+  templateUrl: './profile-article-list.component.html',
+  styleUrls: ['./profile-article-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [provideComponentStore(ProfileArticleListStore)]
 })
 export default class ProfileArticleListComponent implements OnInit {
   readonly #route = inject(ActivatedRoute);
@@ -34,6 +35,7 @@ export default class ProfileArticleListComponent implements OnInit {
   readonly articleCount = this.#profileArticleStore.selectors.articleCount;
   readonly currentOffset = this.#profileArticleStore.selectors.currentOffset;
   readonly pageLimit = signal(ProfileArticleListStore.PAGE_LIMIT).asReadonly();
+  readonly isMyArticle = this.#articleType === ARTICLE_TYPE.MyArticle;
 
   ngOnInit(): void {
     console.log('init', this.#articleType);

@@ -1,3 +1,6 @@
+<a *ngIf="isMyArticle" routerLink="/editor" class="btn btn-primary mb-3">
+  <i class="fa-solid fa-pen-to-square me-1"></i> New Article
+</a>
 <app-article-list
   (toggleFavorite)="toggleFavorite($event)"
   [articleList]="articleList"
