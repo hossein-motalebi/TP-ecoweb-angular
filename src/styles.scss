@@ -12,77 +12,119 @@ body {
   box-shadow: none;
 }
 
+input:focus {
+  box-shadow: none;
+}
+
+textarea:focus {
+  box-shadow: none;
+}
+
+select:focus {
+  box-shadow: none;
+}
+
 .favorite-btn {
   border: 1px solid var(--green-color);
   color: var(--green-color);
+}
 
-  &:hover {
-    color: var(--white-color);
-    background-color: var(--green-color);
-  }
+.favorite-btn:hover {
+  color: var(--white-color);
+  background-color: var(--green-color);
 }
 
 .unfavorite-btn {
   background-color: var(--green-color);
   color: var(--white-color);
-  &:hover {
-    color: var(--white-color);
-    background-color: var(--extra-green-color);
-  }
+}
+
+.unfavorite-btn:hover {
+  color: var(--white-color);
+  background-color: var(--extra-green-color);
+}
+
+.btn-primary {
+  background-color: var(--green-color);
+  color: var(--white-color);
+}
+
+.btn-primary:hover {
+  color: var(--white-color);
+  background-color: var(--extra-green-color);
+}
+
+.btn-success {
+  background-color: var(--green-color);
+  color: var(--white-color);
+}
+
+.btn-success:hover {
+  color: var(--white-color);
+  background-color: var(--extra-green-color);
 }
 
 .global-login {
   text-align: center;
-  .register {
-    color: var(--green-color);
-    text-decoration: none;
-    &:hover {
-      color: var(--extra-green-color);
-      text-decoration: underline;
-    }
-  }
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 620px;
-    margin: 16px auto;
-    .sign-in-btn {
-      margin-left: auto;
-      color: var(--white-color);
-      background-color: var(--green-color);
-      border-color: var(--green-color);
-      &:hover {
-        color: var(--white-color);
-        background-color: var(--extra-green-color);
-        border-color: var(--extra-green-color);
-      }
-    }
-  }
+}
+
+.global-login .register {
+  color: var(--green-color);
+  text-decoration: none;
+}
+
+.global-login .register:hover {
+  color: var(--extra-green-color);
+  text-decoration: underline;
+}
+
+.global-login .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+  margin: 16px auto;
+}
+
+.global-login .login-form .sign-in-btn {
+  margin-left: auto;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+.global-login .login-form .sign-in-btn:hover {
+  color: var(--white-color);
+  background-color: var(--extra-green-color);
+  border-color: var(--extra-green-color);
 }
 
 .global-setting {
   text-align: center;
-  .setting-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 620px;
-    margin: 16px auto;
-    .update-btn {
-      margin-left: auto;
-      color: var(--white-color);
-      background-color: var(--green-color);
-      border-color: var(--green-color);
-      &:hover {
-        background-color: var(--extra-green-color);
-        border-color: var(--extra-green-color);
-      }
-    }
-    .logout-btn {
-      margin-right: auto;
-    }
-  }
+}
+
+.global-setting .setting-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+  margin: 16px auto;
+}
+
+.global-setting .setting-form .update-btn {
+  margin-left: auto;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+.global-setting .setting-form .update-btn:hover {
+  background-color: var(--extra-green-color);
+  border-color: var(--extra-green-color);
+}
+
+.global-setting .setting-form .logout-btn {
+  margin-right: auto;
 }
 
 .global-article-form {
@@ -91,44 +133,50 @@ body {
   gap: 16px;
   max-width: 920px;
   margin: 16px auto;
-  .submit-btn {
-    margin-left: auto;
-    color: var(--white-color);
-    background-color: var(--green-color);
-    border-color: var(--green-color);
-    &:hover {
-      background-color: var(--extra-green-color);
-      border-color: var(--extra-green-color);
-    }
-  }
+}
+
+.global-article-form .submit-btn {
+  margin-left: auto;
+  color: var(--white-color);
+  background-color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+.global-article-form .submit-btn:hover {
+  background-color: var(--extra-green-color);
+  border-color: var(--extra-green-color);
 }
 
 .global-profile-banner {
   background-color: var(--white-gray-color);
   color: var(--blue-black-color);
   padding: 2rem;
-  .user-info {
-    text-align: center;
-    .username {
-      font-weight: 700;
-    }
-    .avatar {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      margin-bottom: 16px;
-    }
-  }
+}
+
+.global-profile-banner .user-info {
+  text-align: center;
+}
+
+.global-profile-banner .user-info .username {
+  font-weight: 700;
+}
+
+.global-profile-banner .user-info .avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
 }
 
 .global-article-detail-banner {
   background-color: var(--blue-black-color);
   color: var(--white-color);
   padding: 2rem;
-  .title {
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 30.016px;
-  }
+}
+
+.global-article-detail-banner .title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 30.016px;
 }
 
