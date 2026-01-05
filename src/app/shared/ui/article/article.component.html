@@ -3,7 +3,7 @@
   <span class="badge-new">NEW</span>
   <span class="badge-trending"><i class="fa-solid fa-fire"></i></span>
   <div class="article-meta">
-    <img alt="avatar" class="avatar" [src]="article.author.image" />
+    <img alt="avatar" class="avatar" [src]="article.author.image" loading="eager" />
     <div class="info">
       <a [routerLink]="'/@' + article.author.username" class="author">{{
         article.author.username
