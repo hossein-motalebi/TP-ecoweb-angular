@@ -11,9 +11,10 @@
 }
 
 .trending-tag {
-  background-color: var(--gray-color);
+  background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=200&q=60');
+  background-size: cover;
   color: var(--white-color) !important;
   &:hover {
-    background-color: var(--extra-gray-color);
+    background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=200&q=60');
   }
 }
