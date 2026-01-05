@@ -1,13 +1,54 @@
 @media print {
-  .no-print {
-    display: none;
+  body {
+    background-image: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1920&q=80');
+    background-size: cover;
+    color: #333;
+    font-family: Arial, sans-serif;
   }
+
+  header {
+    display: block;
+    background-color: #5cb85c;
+    color: white;
+    padding: 20px;
+  }
+
+  footer {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+
   .banner {
-    background-color: #fff;
-    color: #000;
+    display: block;
+    background-color: #5cb85c;
+    color: white;
   }
+
+  .sidebar, .side-bar {
+    display: block;
+  }
+
+  .nav-bar {
+    display: flex;
+  }
+
   button {
-    display: none;
+    display: inline-block;
+    border: 2px solid #000;
+  }
+
+  img {
+    display: block;
+  }
+
+  .decorative-bar {
+    display: block;
+  }
+
+  .badge-new, .badge-trending {
+    display: block;
   }
 }
 
