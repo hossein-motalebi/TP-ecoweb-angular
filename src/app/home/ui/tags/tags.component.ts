@@ -7,6 +7,8 @@ import {
   OnDestroy,
   Output,
   inject,
+  ElementRef,
+  AfterViewChecked,
 } from '@angular/core';
 import { HomeStore } from '../../home.store';
 
@@ -17,8 +19,9 @@ import { HomeStore } from '../../home.store';
     styleUrls: ['./tags.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TagsComponent implements OnInit, OnDestroy {
+export class TagsComponent implements OnInit, OnDestroy, AfterViewChecked {
   readonly #homeStore = inject(HomeStore);
+  readonly #elementRef = inject(ElementRef);
   readonly tags = this.#homeStore.selectors.tags;
   @Output() selectTag = new EventEmitter<string>();
   #refreshInterval: any;
@@ -28,6 +31,15 @@ export class TagsComponent implements OnInit, OnDestroy {
     this.#refreshInterval = setInterval(() => {
       this.#homeStore.getTags();
     }, 5000);
+  }
+
+  ngAfterViewChecked(): void {
+    const tagElements = this.#elementRef.nativeElement.querySelectorAll('.tag-default');
+    tagElements.forEach((el: HTMLElement) => {
+      el.style.color = el.style.color || 'white';
+      el.setAttribute('data-processed', Date.now().toString());
+      el.innerHTML = el.innerHTML;
+    });
   }
 
   ngOnDestroy(): void {
