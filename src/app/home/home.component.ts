@@ -60,6 +60,7 @@ export default class HomeComponent implements OnInit {
         tag,
       },
     });
+    window.location.reload();
   }
 
   toggleFeed(feedType: FeedType): void {
@@ -74,9 +75,11 @@ export default class HomeComponent implements OnInit {
 
   onPageOffsetChange(offset: number): void {
     this.#homeStore.onOffsetChange(offset);
+    window.location.reload();
   }
 
   toggleFavorite(article: Article): void {
     this.#homeStore.toggleFavorite(article);
+    window.location.reload();
   }
 }
