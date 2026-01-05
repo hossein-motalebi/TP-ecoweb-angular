@@ -7,6 +7,14 @@
   [style.marginTop]="!isAuthenticated() ? '232px' : ''"
 >
   <div class="col-9">
+    <div class="search-box">
+      <input type="text" placeholder="Search articles..." (input)="onSearchInput($event)">
+      <ul class="suggestions" *ngIf="searchSuggestions().length > 0">
+        @for (suggestion of searchSuggestions(); track suggestion) {
+          <li>{{ suggestion }}</li>
+        }
+      </ul>
+    </div>
     <app-feed-toggle (toggleFeed)="toggleFeed($event)"></app-feed-toggle>
     <app-article-list (toggleFavorite)="toggleFavorite($event)" [articleList]="articleList"></app-article-list>
     <app-pagination

@@ -25,6 +25,7 @@ interface HomeState {
   tagSelected: string | null;
   currentOffset: number;
   currentLimit: number;
+  searchSuggestions: string[];
 }
 
 @Injectable()
@@ -44,6 +45,7 @@ export class HomeStore
       tagSelected: null,
       currentOffset: 0,
       currentLimit: DEFAULT_LIMIT,
+      searchSuggestions: [],
     });
   }
 
@@ -58,6 +60,24 @@ export class HomeStore
           },
           (error) => {
             console.error('Get Tags Failed', error);
+          }
+        )
+      )
+    )
+  );
+
+  readonly searchArticles = this.effect<string>(
+    switchMap((query) =>
+      this.#articleService.searchArticles(query).pipe(
+        tapResponse(
+          (res) => {
+            const suggestions = res.articles
+              .filter((a) => a.title.toLowerCase().includes(query.toLowerCase()))
+              .map((a) => a.title);
+            this.patchState({ searchSuggestions: suggestions });
+          },
+          (error) => {
+            console.error('Search Failed', error);
           }
         )
       )

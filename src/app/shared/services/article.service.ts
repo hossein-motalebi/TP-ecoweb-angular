@@ -107,4 +107,10 @@ export class ArticleService {
       `/articles/${slug}/favorite`
     );
   }
+
+  searchArticles(query: string): Observable<ArticlePagingAPIResponse> {
+    return this.#httpClient.get<ArticlePagingAPIResponse>('/articles', {
+      params: { limit: 100, offset: 0 },
+    });
+  }
 }

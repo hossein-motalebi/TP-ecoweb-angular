@@ -36,6 +36,12 @@ export default class HomeComponent implements OnInit {
   readonly currentOffset = this.#homeStore.selectors.currentOffset;
   readonly isAuthenticated = this.#authStore.selectors.isAuthenticated;
   readonly articleList = this.#homeStore.selectors.articleList;
+  readonly searchSuggestions = this.#homeStore.selectors.searchSuggestions;
+
+  onSearchInput(event: Event): void {
+    const query = (event.target as HTMLInputElement).value;
+    this.#homeStore.searchArticles(query);
+  }
 
   ngOnInit(): void {
     if (this.isAuthenticated()) {
