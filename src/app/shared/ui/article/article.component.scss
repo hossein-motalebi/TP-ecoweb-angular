@@ -1,6 +1,36 @@
 .article-preview {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.5rem 0;
+  position: relative;
+
+  .decorative-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  }
+
+  .badge-new {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    background: #ff4757;
+    color: white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+  }
+
+  .badge-trending {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ff6348;
+    font-size: 16px;
+  }
+
   .article-meta {
     display: flex;
     align-items: center;
