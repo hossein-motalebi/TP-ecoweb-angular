@@ -26,3 +26,105 @@ body {
     background-color: var(--extra-green-color);
   }
 }
+
+.global-login {
+  text-align: center;
+  .register {
+    color: var(--green-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--extra-green-color);
+      text-decoration: underline;
+    }
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 620px;
+    margin: 16px auto;
+    .sign-in-btn {
+      margin-left: auto;
+      color: var(--white-color);
+      background-color: var(--green-color);
+      border-color: var(--green-color);
+      &:hover {
+        color: var(--white-color);
+        background-color: var(--extra-green-color);
+        border-color: var(--extra-green-color);
+      }
+    }
+  }
+}
+
+.global-setting {
+  text-align: center;
+  .setting-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 620px;
+    margin: 16px auto;
+    .update-btn {
+      margin-left: auto;
+      color: var(--white-color);
+      background-color: var(--green-color);
+      border-color: var(--green-color);
+      &:hover {
+        background-color: var(--extra-green-color);
+        border-color: var(--extra-green-color);
+      }
+    }
+    .logout-btn {
+      margin-right: auto;
+    }
+  }
+}
+
+.global-article-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 920px;
+  margin: 16px auto;
+  .submit-btn {
+    margin-left: auto;
+    color: var(--white-color);
+    background-color: var(--green-color);
+    border-color: var(--green-color);
+    &:hover {
+      background-color: var(--extra-green-color);
+      border-color: var(--extra-green-color);
+    }
+  }
+}
+
+.global-profile-banner {
+  background-color: var(--white-gray-color);
+  color: var(--blue-black-color);
+  padding: 2rem;
+  .user-info {
+    text-align: center;
+    .username {
+      font-weight: 700;
+    }
+    .avatar {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.global-article-detail-banner {
+  background-color: var(--blue-black-color);
+  color: var(--white-color);
+  padding: 2rem;
+  .title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 30.016px;
+  }
+}
+
