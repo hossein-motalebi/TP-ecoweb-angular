@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+  .banner {
+    .title {
+      font-size: 2rem;
+    }
+  }
+  .article-preview {
+    padding: 1rem 0;
+  }
+}

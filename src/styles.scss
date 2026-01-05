@@ -1,5 +1,9 @@
 @import "styles/font";
 @import "styles/color";
+@import "styles/mobile";
+@import "styles/tablet";
+@import "styles/desktop";
+@import "styles/print";
 body {
   font-family: var(--font-source-sans);
 }
